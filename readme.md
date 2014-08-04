@@ -1,0 +1,1 @@
+The purpose of this guessing game is to guess the amount of protons that carbon-12 has. The user will have 3 attempts. The answer may be written in numeric form "4" or written out "four". The user will be informed of how many guesses he or she has left and his or her previous guesses after each guess.

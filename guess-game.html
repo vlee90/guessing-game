@@ -1,0 +1,31 @@
+<script>
+	var guess;											//Where user's guess is stored.
+	var guessList = new Array();		//Remember user's guesses.
+	var answerNumber = "6";					//Correct answer in numeric form (must be string because prompt returns string).
+	var answerWord = "SIX";					//Correct answer in numeric form.
+	var outputMessage;							//Tells users the result.
+	var attempt;										//Guess number
+	var maxAttempts = 3;						//Maximum allowed guesses.
+	var correct = false;						//Used to break for-loop when user gets 
+	for(attempt = 1; attempt <= maxAttempts; attempt++){
+		guess = prompt("How many protons are in carbon-12 atom?").toUpperCase();
+		switch(guess){
+			case answerNumber:
+				outputMessage = "6 is correct!";
+				correct = true;
+				guessList[attempt - 1] = guess;
+				break;
+			case answerWord:
+				outputMessage = "6 is correct!";
+				correct = true;
+				guessList[attempt - 1] = guess;
+				break;
+			default:
+				outputMessage = "Incorrect. You have " + (maxAttempts-attempt).toString() + " attempts left.";
+				guessList[attempt - 1] = guess + " ";
+			}
+		alert(outputMessage);
+		alert("Your previous guesses are " + guessList);
+		if(correct === true) break;
+		}
+</script>
