@@ -1,31 +1,44 @@
+
 <script>
-	var guess;											//Where user's guess is stored.
-	var guessList = new Array();		//Remember user's guesses.
-	var answerNumber = "6";					//Correct answer in numeric form (must be string because prompt returns string).
-	var answerWord = "SIX";					//Correct answer in numeric form.
-	var outputMessage;							//Tells users the result.
-	var attempt;										//Guess number
-	var maxAttempts = 3;						//Maximum allowed guesses.
-	var correct = false;						//Used to break for-loop when user gets 
-	for(attempt = 1; attempt <= maxAttempts; attempt++){
+/*
+var guess                 The guess from the user
+var guessList             Creates an array of guesses
+var answerNumber          Correct answer in numeric form (must be string because prompt returns string).
+var answerWord			  Correct answer in string form. 
+var maxAttempts			  Maximum allowed guesses.
+var attempt				  tracks the number of attempts
+var rightGuessmessage	  String output when the correct number is guessed
+var wrongGuessmessage     String output when the incorrect number is guessed
+var Correct  			  Boolean to check if the loop can breaks
+
+*/
+	var guess;
+	var guessList = new Array();		
+	var answerNumber = "6";				
+	var answerWord = "SIX";				
+	var maxAttempts = 3;
+	var attempt = 1;
+	var rightGuessmessage = "6 is  correct";
+	var wrongGuessmessage = "Incorrect. You have " + (maxAttempts-attempt).toString() + " attempts left."
+	var correct = false;				
+	for(attempt; attempt <= maxAttempts; attempt++){
 		guess = prompt("How many protons are in carbon-12 atom?").toUpperCase();
 		switch(guess){
 			case answerNumber:
-				outputMessage = "6 is correct!";
+				alert(rightGuessmessage);
 				correct = true;
 				guessList[attempt - 1] = guess;
 				break;
 			case answerWord:
-				outputMessage = "6 is correct!";
+				alert(rightGuessmessage);
 				correct = true;
 				guessList[attempt - 1] = guess;
 				break;
 			default:
-				outputMessage = "Incorrect. You have " + (maxAttempts-attempt).toString() + " attempts left.";
-				guessList[attempt - 1] = guess + " ";
+				alert(wrongGuessmessage);
+				guessList[attempt - 1] = guess;
 			}
-		alert(outputMessage);
-		alert("Your previous guesses are " + guessList);
+				alert("Your previous guesses are " + guessList);
 		if(correct === true) break;
 		}
 </script>
